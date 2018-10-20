@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+   keycloak:
+      image: jboss/keycloak
+      networks:
+          - authentication-network
+      ports:
+          - 8000:8080
+      environment:
+         - KEYCLOAK_LOGLEVEL=DEBUG
+         - PROXY_ADDRESS_FORWARDING=true
+         - KEYCLOAK_USER=keycloak
+         - KEYCLOAK_PASSWORD=keycloak
+
+   database:
+      image: mysql:5
+      networks:
+         - authentication-network
+      ports:
+         - 3306:3306
+      environment:
+         - MYSQL_ROOT_PASSWORD=root
+         - MYSQL_DATABASE=keycloak
+         - MYSQL_USER=keycloak
+         - MYSQL_PASSWORD=password
+
+networks:
+   authentication-network:
