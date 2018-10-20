@@ -1,6 +1,6 @@
 spring:
    application:
-      name: netflex-eureka-naming-server
+      name: netflix-eureka-naming-server
 
 server:
    port: 8761
