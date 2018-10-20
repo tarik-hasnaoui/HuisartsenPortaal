@@ -11,14 +11,14 @@ import javax.servlet.ServletException;
 @RequestMapping("user")
 public class patientController {
 
-        @GetMapping("/")
-        public String index() {
-            return "external";
-        }
+         @GetMapping("/")
+          public String getHello() {
+        return "hello";
+    }
 
         @GetMapping("/login")
         public String getUser() {
-            return "tariiiik";
+            return "hello user";
         }
 
         @GetMapping("/logout")
