@@ -1,27 +1,29 @@
 package nl.huisartsPortal.microservices.patientservice.controller;
 
-import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletException;
+import java.security.Principal;
 
 @RestController
 public class patientController {
 
-        @GetMapping("/")
-        public String index() {
-            return "external";
-        }
+    @GetMapping("/admin/hello")
+    public String sayHelloToAdmin() {
+        return "Hello Admin";
+    }
 
-        @GetMapping("/login")
-        public String getUser() {
-            return "tariiiik";
-        }
+    @GetMapping("/user/hello")
+    public String sayHelloToUser() {
+        return "Hello User";
+    }
 
-        @GetMapping("/logout")
-        public void logout(HttpServletRequest request) throws ServletException {
-            request.logout();
-        }
+    @GetMapping("/guest/hello")
+    public String sayHelloToGuest() {
+        return "Hello Guest" ;
+    }
+
+
     }
 
