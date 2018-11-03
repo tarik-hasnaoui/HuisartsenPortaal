@@ -1,0 +1,13 @@
+spring:
+   application:
+      name: prescription
+
+server:
+   port: 8383
+
+eureka:
+   client:
+      fetch-registry: true
+      register-with-eureka: true
+      service-url:
+         default-zone: http:localhost:8761/eureka
