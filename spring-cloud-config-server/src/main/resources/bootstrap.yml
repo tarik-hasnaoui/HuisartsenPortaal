@@ -5,7 +5,8 @@ spring:
      config:
        server:
           git:
-            uri: ${HOME}/IdeaProjects/HuisartsPortal/spring-cloud-config-server
+            uri: file:///${user.home}/IdeaProjects/HuisartsPortal/git-locaconfig-repository
+
 
 server:
    port: 8888
