@@ -25,8 +25,8 @@ public class Prescription implements Serializable {
         this.doctor = doctor;
     }
 
-    @ManyToOne( cascade = CascadeType.ALL)
-    @JoinColumn(name="patient_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "patient_id")
     private Patient patient;
 
 
@@ -36,7 +36,7 @@ public class Prescription implements Serializable {
 
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="doctor_id")
+    @JoinColumn(name = "doctor_id")
     private Doctor doctor;
 
 

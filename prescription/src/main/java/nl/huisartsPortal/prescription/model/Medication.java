@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Medication implements Serializable{
+public class Medication implements Serializable {
 
     private static final long serialVersionUID = 1598430021607613043L;
 
