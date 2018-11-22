@@ -15,26 +15,22 @@ public class PrescriptionController {
     @Autowired
     private PrescriptionService prescriptionService;
 
-    @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
-    @PostMapping("/admin/addPrescription")
+    @PostMapping("/doctor/addPrescription")
     public void addPrescription(@Valid @RequestBody Prescription prescription) {
         prescriptionService.createPrescription(prescription);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
-    @GetMapping("/admin/getPrescription/{prescriptionId}")
+    @GetMapping("/doctor/getPrescription/{prescriptionId}")
     public Prescription getPrescription(@PathVariable Long prescriptionId) {
         return prescriptionService.getPrescription(prescriptionId);
     }
 
-    @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
-    @GetMapping("/admin/getAllPrescription")
+    @GetMapping("/doctor/getAllPrescription")
     public List<Prescription> getPrescriptions() {
         return prescriptionService.getAll();
     }
 
-    @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
-    @DeleteMapping("/admin/deletePrescription/{prescriptionId}")
+    @DeleteMapping("/doctor/deletePrescription/{prescriptionId}")
     public void deletePrescription(@PathVariable Long prescriptionId) {
         prescriptionService.deletePrescription(prescriptionId);
     }
