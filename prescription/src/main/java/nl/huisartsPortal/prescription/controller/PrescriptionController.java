@@ -35,4 +35,18 @@ public class PrescriptionController {
         prescriptionService.deletePrescription(prescriptionId);
     }
 
+    @PutMapping("/doctor/updatePrescription/{prescriptionId}")
+    public void updatePrescription(@RequestBody Prescription prescription, @PathVariable Long prescriptionId) {
+        prescriptionService.updatePrescription(prescription, prescriptionId);
+    }
+
+    @GetMapping("/patient/getAllPrescription/{BsnNumber}")
+    public List<Prescription> getPrescriptions(@PathVariable String BsnNumber) {
+        return prescriptionService.getPatientPriscriptions(BsnNumber);
+    }
+
+    @GetMapping("/patient/getPrescription/{prescriptionId}")
+    public Prescription getPatientPrescription(@PathVariable Long prescriptionId) {
+        return prescriptionService.getPatientPrescription(prescriptionId);
+    }
 }
