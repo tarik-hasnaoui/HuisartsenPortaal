@@ -44,7 +44,7 @@ public class PrescriptionService {
     }
 
     public void createPrescription(Prescription prescription) {
-        Prescription prescriptionStored = prescriptionDao.getPrescriptionByPrescriptionId(prescription.getPrescriptionId());
+                Prescription prescriptionStored = prescriptionDao.getPrescriptionByPrescriptionId(prescription.getPrescriptionId());
         if (prescriptionStored != null) throw new RuntimeException("prescription already exist");
 
         Doctor doctorStored = doctorDao.findByBsnNumber(prescription.getDoctor().getBsnNumber());
@@ -69,4 +69,54 @@ public class PrescriptionService {
         prescriptionDao.delete(prescription);
     }
 
+    public void updatePrescription(Prescription prescription, Long prescriptionId) {
+        Prescription prescriptionStored = prescriptionDao.getPrescriptionByPrescriptionId(prescriptionId);
+        if (prescriptionStored == null) throw new RuntimeException("prescription with " + prescriptionId + "not exist");
+
+        Long doctorId = null;
+        if (prescriptionStored.getDoctor() != null) {
+            doctorId = prescriptionStored.getDoctor().getId();
+        }
+        prescription.setPrescriptionId(prescriptionStored.getPrescriptionId());
+        if (doctorId != null) {
+            prescription.getDoctor().setId(doctorId);
+        }
+
+        Long patientId = null;
+        if (prescriptionStored.getPatient() != null) {
+            patientId = prescriptionStored.getPatient().getId();
+        }
+
+        if (patientId != null) {
+            prescription.getPatient().setId(patientId);
+        }
+
+        for (Medication pre : prescriptionStored.getMedications()) {
+            Long medicationId = null;
+            if (pre != null) {
+                medicationId = pre.getId();
+            }
+            if (medicationId != null) {
+                pre.setId(medicationId);
+            }
+        }
+        prescriptionDao.save(prescription);
+    }
+
+    public List<Prescription> getPatientPriscriptions(String bsnNumber) {
+
+        List<Long> prescriptionId = new ArrayList<>();
+        Patient patientStored = patientDao.getPatientByBsnNumber(bsnNumber);
+        if (patientStored == null) throw new RuntimeException("patient with " + bsnNumber + "not exist");
+        for (Prescription pre : patientStored.getPrescription()) {
+            Long id = pre.getPrescriptionId();
+            prescriptionId.add(id);
+
+        }
+        return prescriptionDao.findAllById(prescriptionId);
+    }
+
+    public Prescription getPatientPrescription(Long prescriptionId) {
+        return prescriptionDao.getOne(prescriptionId);
+    }
 }
