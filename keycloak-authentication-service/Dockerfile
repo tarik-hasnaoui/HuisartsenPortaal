@@ -1,6 +1,6 @@
 FROM openjdk:8u171-jdk-alpine3.8
 
-MAINTAINER Tarik Hasnaoui "tarik.hasnaoui@hva.nl"
+MAINTAINER Name "email address"
 
 COPY ./target/AuthenticationService-0.0.1-SNAPSHOT.jar webapp.jar
 
