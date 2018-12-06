@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d27deaa9-14c7-409a-acea-0f95ac4fa821" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prescription.properties" beforeDir="false" afterPath="$PROJECT_DIR$/prescription.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../netflix-zuul-api-gateway-server/src/main/java/nl/huisartsPortal/microservices/netflixzuulapigatewayserver/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../netflix-zuul-api-gateway-server/src/main/java/nl/huisartsPortal/microservices/netflixzuulapigatewayserver/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../netflix-zuul-api-gateway-server/src/main/java/nl/huisartsPortal/microservices/netflixzuulapigatewayserver/filter/ZuulLoggingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../netflix-zuul-api-gateway-server/src/main/java/nl/huisartsPortal/microservices/netflixzuulapigatewayserver/filter/ZuulLoggingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../netflix-zuul-api-gateway-server/src/main/resources/application.properties" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,12 +138,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544112684101</updated>
-      <workItem from="1544112685519" duration="925000" />
+      <workItem from="1544112685519" duration="2057000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="925000" />
+    <option name="totallyTimeSpent" value="2057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="12" y="16" width="1496" height="792" extended-state="0" />
@@ -180,6 +183,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/prescription.acc.properties">
