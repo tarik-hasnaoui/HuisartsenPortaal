@@ -26,7 +26,7 @@ public class Medication implements Serializable {
     public Medication() {
     }
 
-    public Medication(String name) {
+    public Medication(String name, List<Prescription> prescriptions) {
         this.name = name;
         this.prescriptions = prescriptions;
     }

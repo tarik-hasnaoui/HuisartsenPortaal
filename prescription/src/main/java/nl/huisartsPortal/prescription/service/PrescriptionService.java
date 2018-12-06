@@ -40,11 +40,17 @@ public class PrescriptionService {
     }
 
     public List<Prescription> getAll() {
-        return prescriptionDao.findAll();
+        List<Prescription> prescription = prescriptionDao.findAll();
+        for (Prescription pres : prescription) {
+            if (pres == null) {
+                throw new DataNotFoundException("Empty");
+            }
+        }
+        return prescription;
     }
 
-    public void createPrescription(Prescription prescription) {
-                Prescription prescriptionStored = prescriptionDao.getPrescriptionByPrescriptionId(prescription.getPrescriptionId());
+    public Prescription createPrescription(Prescription prescription) {
+        Prescription prescriptionStored = prescriptionDao.getPrescriptionByPrescriptionId(prescription.getPrescriptionId());
         if (prescriptionStored != null) throw new RuntimeException("prescription already exist");
 
         Doctor doctorStored = doctorDao.findByBsnNumber(prescription.getDoctor().getBsnNumber());
@@ -61,7 +67,7 @@ public class PrescriptionService {
                 prescription.setMedications(medicationSet);
             }
         }
-        prescriptionDao.save(prescription);
+       return prescriptionDao.save(prescription);
     }
 
     public void deletePrescription(Long id) {
@@ -103,12 +109,12 @@ public class PrescriptionService {
         prescriptionDao.save(prescription);
     }
 
-    public List<Prescription> getPatientPriscriptions(String bsnNumber) {
+    public List<Prescription> getPatientPrescriptions(String bsnNumber) {
 
         List<Long> prescriptionId = new ArrayList<>();
         Patient patientStored = patientDao.getPatientByBsnNumber(bsnNumber);
         if (patientStored == null) throw new RuntimeException("patient with " + bsnNumber + "not exist");
-        for (Prescription pre : patientStored.getPrescription()) {
+        for (Prescription pre : patientStored.getPrescriptions()) {
             Long id = pre.getPrescriptionId();
             prescriptionId.add(id);
 

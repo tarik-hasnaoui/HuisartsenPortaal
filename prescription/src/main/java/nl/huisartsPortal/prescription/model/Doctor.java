@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Doctor implements Serializable {
 
     private static final long serialVersionUID = 7945509928538708187L;
@@ -23,6 +23,7 @@ public class Doctor implements Serializable {
 
     @NotBlank(message = "Enter the user first name")
     private String firstName;
+
     @NotBlank(message = "Enter the user last name")
     private String lastName;
 
