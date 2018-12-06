@@ -21,3 +21,9 @@ keycloak:
   ssl-required: external
   use-resource-role-mappings: true
   principal-attribute: preferred_username
+
+  cors: true
+
+zuul:
+   sensitive-headers: Cookie,Set-Cookie
+   ignored-headers: Access-Control-Allow-Credentials, Access-Control-Allow-Origin
