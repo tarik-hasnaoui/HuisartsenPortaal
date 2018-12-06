@@ -5,10 +5,6 @@ import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.http.HttpServletRequest;
-
-;
-
 
 @Component
 public class ZuulLoggingFilter extends ZuulFilter {
