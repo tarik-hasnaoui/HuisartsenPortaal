@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="32afc4a2-4b6a-426b-bcdc-246c6d1948fb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescription.acc.properties" beforeDir="false" afterPath="$PROJECT_DIR$/prescription.acc.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prescription.properties" beforeDir="false" afterPath="$PROJECT_DIR$/prescription.properties" afterDir="false" />
+=======
     <list default="true" id="d27deaa9-14c7-409a-acea-0f95ac4fa821" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prescription.properties" beforeDir="false" afterPath="$PROJECT_DIR$/prescription.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../netflix-zuul-api-gateway-server/src/main/java/nl/huisartsPortal/microservices/netflixzuulapigatewayserver/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../netflix-zuul-api-gateway-server/src/main/java/nl/huisartsPortal/microservices/netflixzuulapigatewayserver/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../netflix-zuul-api-gateway-server/src/main/java/nl/huisartsPortal/microservices/netflixzuulapigatewayserver/filter/ZuulLoggingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../netflix-zuul-api-gateway-server/src/main/java/nl/huisartsPortal/microservices/netflixzuulapigatewayserver/filter/ZuulLoggingFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../netflix-zuul-api-gateway-server/src/main/resources/application.properties" beforeDir="false" />
+>>>>>>> master
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,10 +22,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
+<<<<<<< HEAD
+    <session id="714281995">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+=======
     <session id="-104868608">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.open.time.0" value="1" />
+>>>>>>> master
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
@@ -32,6 +47,8 @@
           <entry key="Properties" value="2" />
         </counts>
       </usages-collector>
+<<<<<<< HEAD
+=======
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="properties" value="38" />
@@ -42,24 +59,41 @@
           <entry key="Properties" value="38" />
         </counts>
       </usages-collector>
+>>>>>>> master
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/prescription.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+=======
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prescription.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
               <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+>>>>>>> master
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/prescription.acc.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+=======
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prescription.acc.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
               <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+>>>>>>> master
             </state>
           </provider>
         </entry>
@@ -67,12 +101,20 @@
     </leaf>
   </component>
   <component name="Git.Settings">
+<<<<<<< HEAD
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+=======
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+>>>>>>> master
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/prescription.properties" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/prescription.acc.properties" />
+=======
+>>>>>>> master
       </list>
     </option>
   </component>
@@ -82,6 +124,14 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+<<<<<<< HEAD
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
+  </component>
+=======
   <component name="ProjectFrameBounds">
     <option name="x" value="15" />
     <option name="y" value="20" />
@@ -89,6 +139,7 @@
     <option name="height" value="990" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+>>>>>>> master
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -105,8 +156,13 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+=======
       <pane id="PackagesPane" />
       <pane id="Scope" />
+>>>>>>> master
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -133,20 +189,36 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
+      <changelist id="32afc4a2-4b6a-426b-bcdc-246c6d1948fb" name="Default Changelist" comment="" />
+      <created>1542573415669</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542573415669</updated>
+      <workItem from="1542573418014" duration="343000" />
+=======
       <changelist id="d27deaa9-14c7-409a-acea-0f95ac4fa821" name="Default Changelist" comment="" />
       <created>1544112684101</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544112684101</updated>
       <workItem from="1544112685519" duration="2057000" />
+>>>>>>> master
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="343000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+=======
     <option name="totallyTimeSpent" value="2057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="12" y="16" width="1496" height="792" extended-state="0" />
+>>>>>>> master
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
@@ -154,10 +226,17 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
+<<<<<<< HEAD
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25033557" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+=======
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+>>>>>>> master
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -184,6 +263,20 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+<<<<<<< HEAD
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/prescription.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prescription.acc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+=======
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
@@ -200,6 +293,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+>>>>>>> master
         </state>
       </provider>
     </entry>
