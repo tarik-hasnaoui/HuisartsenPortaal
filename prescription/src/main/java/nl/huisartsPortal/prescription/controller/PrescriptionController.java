@@ -42,7 +42,7 @@ public class PrescriptionController {
 
     @GetMapping("/patient/getAllPrescription/{BsnNumber}")
     public List<Prescription> getPrescriptions(@PathVariable String BsnNumber) {
-        return prescriptionService.getPatientPriscriptions(BsnNumber);
+        return prescriptionService.getPatientPrescriptions(BsnNumber);
     }
 
     @GetMapping("/patient/getPrescription/{prescriptionId}")
