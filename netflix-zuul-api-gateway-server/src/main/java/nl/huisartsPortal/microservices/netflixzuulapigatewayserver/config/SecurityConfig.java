@@ -80,6 +80,7 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
         return new KeycloakSpringBootConfigResolver();
     }
 
+<<<<<<< HEAD
     @Bean
     public FilterRegistrationBean keycloakAuthenticationProcessingFilterRegistrationBean(
             final KeycloakAuthenticationProcessingFilter filter) {
@@ -113,4 +114,6 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
         source.registerCorsConfiguration("/**", config);
         return source;
     }
+=======
+>>>>>>> master
 }
