@@ -9,7 +9,6 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Doctor implements Serializable {
 
     private static final long serialVersionUID = 7945509928538708187L;

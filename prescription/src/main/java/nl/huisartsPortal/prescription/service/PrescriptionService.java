@@ -17,7 +17,8 @@ import java.util.List;
 
 
 @Service
-public class PrescriptionService {
+public class
+PrescriptionService {
 
     @Autowired
     private PrescriptionDao prescriptionDao;
