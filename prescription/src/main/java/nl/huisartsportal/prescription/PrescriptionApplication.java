@@ -1,13 +1,13 @@
-package nl.huisartsPortal.prescription;
+package nl.huisartsportal.prescription;
 
-import nl.huisartsPortal.prescription.model.Doctor;
-import nl.huisartsPortal.prescription.model.Medication;
-import nl.huisartsPortal.prescription.model.Patient;
-import nl.huisartsPortal.prescription.model.Prescription;
-import nl.huisartsPortal.prescription.repository.DoctorDao;
-import nl.huisartsPortal.prescription.repository.MedicationDao;
-import nl.huisartsPortal.prescription.repository.PatientDao;
-import nl.huisartsPortal.prescription.repository.PrescriptionDao;
+import nl.huisartsportal.prescription.model.Doctor;
+import nl.huisartsportal.prescription.model.Medication;
+import nl.huisartsportal.prescription.model.Patient;
+import nl.huisartsportal.prescription.model.Prescription;
+import nl.huisartsportal.prescription.repository.DoctorDao;
+import nl.huisartsportal.prescription.repository.MedicationDao;
+import nl.huisartsportal.prescription.repository.PatientDao;
+import nl.huisartsportal.prescription.repository.PrescriptionDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,6 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 
+import java.time.LocalDate;
 import java.util.*;
 
 
@@ -40,7 +41,7 @@ public class PrescriptionApplication {
 
     @Bean
     public CommandLineRunner demo() {
-        return (args) -> {
+        return args -> {
 
             Doctor doctor1 = new Doctor("NL9876", "Martijn", "Van Dam", null);
             Doctor doctor2 = new Doctor("NL8765", "Verhaar", "Sana", null);
@@ -55,10 +56,10 @@ public class PrescriptionApplication {
             Medication medication4 = new Medication("Pantoprazol 50MG", null);
             Medication medication5 = new Medication("Tramadole 10MG", null);
 
-            Prescription prescription1 = new Prescription(new Date(2018, 2, 10), patient1, Arrays.asList(medication1, medication2), doctor1);
-            Prescription prescription2 = new Prescription(new Date(2018, 11, 20), patient2, Arrays.asList(medication3, medication4), doctor1);
-            Prescription prescription3 = new Prescription(new Date(2018, 10, 20), patient3, Arrays.asList(medication5), doctor2);
-            Prescription prescription4 = new Prescription(new Date(2018, 11, 25), patient1, Arrays.asList(medication3, medication4), doctor1);
+            Prescription prescription1 = new Prescription(LocalDate.of(2018, 2, 10), patient1, Arrays.asList(medication1, medication2), doctor1);
+            Prescription prescription2 = new Prescription(LocalDate.of(2018, 11, 20), patient2, Arrays.asList(medication3, medication4), doctor1);
+            Prescription prescription3 = new Prescription(LocalDate.of(2018, 10, 20), patient3, Arrays.asList(medication5), doctor2);
+            Prescription prescription4 = new Prescription(LocalDate.of(2018, 11, 25), patient1, Arrays.asList(medication3, medication4), doctor1);
             prescriptionDao.saveAll(Arrays.asList(prescription1, prescription2, prescription3, prescription4));
 
 

@@ -1,7 +1,7 @@
-package nl.huisartsPortal.prescription.model;
+package nl.huisartsportal.prescription.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -9,9 +9,9 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Patient implements Serializable {
+public class Doctor implements Serializable {
 
-    private static final long serialVersionUID = 5447640720244936040L;
+    private static final long serialVersionUID = 7945509928538708187L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,18 +22,19 @@ public class Patient implements Serializable {
 
     @NotBlank(message = "Enter the user first name")
     private String firstName;
+
     @NotBlank(message = "Enter the user last name")
     private String lastName;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "patient", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "doctor", fetch = FetchType.LAZY)
     private List<Prescription> prescriptions;
 
-    public Patient() {
+    public Doctor() {
 
     }
 
-    public Patient(String bsnNumber, String firstName, String lastName, List<Prescription> prescriptions) {
+    public Doctor(String bsnNumber, String firstName, String lastName,
+                  List<Prescription> prescriptions) {
         this.bsnNumber = bsnNumber;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -80,6 +81,4 @@ public class Patient implements Serializable {
     public void setPrescriptions(List<Prescription> prescriptions) {
         this.prescriptions = prescriptions;
     }
-
-
 }

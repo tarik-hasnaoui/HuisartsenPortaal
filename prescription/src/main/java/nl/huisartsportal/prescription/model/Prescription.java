@@ -1,11 +1,10 @@
-package nl.huisartsPortal.prescription.model;
+package nl.huisartsportal.prescription.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -18,13 +17,12 @@ public class Prescription implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long prescriptionId;
 
-//    @JsonFormat(pattern="yyyy-MM-dd")
-    private Date date;
+private LocalDate date;
 
     public Prescription() {
     }
 
-    public Prescription(Date date, Patient patient, List<Medication> medications, Doctor doctor) {
+    public Prescription(LocalDate date, Patient patient, List<Medication> medications, Doctor doctor) {
         this.patient = patient;
         this.medications = medications;
         this.doctor = doctor;
@@ -78,11 +76,11 @@ public class Prescription implements Serializable {
         this.prescriptionId = prescriptionId;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 }

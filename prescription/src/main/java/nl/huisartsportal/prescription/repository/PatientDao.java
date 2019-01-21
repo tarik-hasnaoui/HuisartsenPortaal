@@ -1,6 +1,6 @@
-package nl.huisartsPortal.prescription.repository;
+package nl.huisartsportal.prescription.repository;
 
-import nl.huisartsPortal.prescription.model.Patient;
+import nl.huisartsportal.prescription.model.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

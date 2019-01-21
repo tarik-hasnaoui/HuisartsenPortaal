@@ -1,7 +1,7 @@
-package nl.huisartsPortal.prescription.controller;
+package nl.huisartsportal.prescription.controller;
 
-import nl.huisartsPortal.prescription.model.Prescription;
-import nl.huisartsPortal.prescription.service.PrescriptionService;
+import nl.huisartsportal.prescription.model.Prescription;
+import nl.huisartsportal.prescription.service.PrescriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,8 +40,8 @@ public class PrescriptionController {
     }
 
     @GetMapping("/patient/getAllPrescription/{BsnNumber}")
-    public List<Prescription> getPrescriptions(@PathVariable String BsnNumber) {
-        return prescriptionService.getPatientPrescriptions(BsnNumber);
+    public List<Prescription> getPrescriptions(@PathVariable String bsnNumber) {
+        return prescriptionService.getPatientPrescriptions(bsnNumber);
     }
 
     @GetMapping("/patient/getPrescription/{prescriptionId}")

@@ -1,4 +1,4 @@
-package nl.huisartsPortal.prescription.exceptions;
+package nl.huisartsportal.prescription.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

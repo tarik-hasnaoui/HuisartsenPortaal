@@ -1,14 +1,16 @@
-package nl.huisartsPortal.prescription.service;
+package nl.huisartsportal.prescription.service;
 
-import nl.huisartsPortal.prescription.exceptions.DataNotFoundException;
-import nl.huisartsPortal.prescription.model.Doctor;
-import nl.huisartsPortal.prescription.model.Medication;
-import nl.huisartsPortal.prescription.model.Patient;
-import nl.huisartsPortal.prescription.model.Prescription;
-import nl.huisartsPortal.prescription.repository.DoctorDao;
-import nl.huisartsPortal.prescription.repository.MedicationDao;
-import nl.huisartsPortal.prescription.repository.PatientDao;
-import nl.huisartsPortal.prescription.repository.PrescriptionDao;
+import nl.huisartsportal.prescription.error.ErrorMessages;
+import nl.huisartsportal.prescription.exceptions.DataNotFoundException;
+import nl.huisartsportal.prescription.exceptions.IllegalException;
+import nl.huisartsportal.prescription.model.Doctor;
+import nl.huisartsportal.prescription.model.Medication;
+import nl.huisartsportal.prescription.model.Patient;
+import nl.huisartsportal.prescription.model.Prescription;
+import nl.huisartsportal.prescription.repository.DoctorDao;
+import nl.huisartsportal.prescription.repository.MedicationDao;
+import nl.huisartsportal.prescription.repository.PatientDao;
+import nl.huisartsportal.prescription.repository.PrescriptionDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,9 +35,10 @@ PrescriptionService {
     private PatientDao patientDao;
 
     public Prescription getPrescription(Long prescriptionId) {
-        Prescription prescriptionEntity = prescriptionDao.getPrescriptionByPrescriptionId(prescriptionId);
+        Prescription prescriptionEntity =
+                prescriptionDao.getPrescriptionByPrescriptionId(prescriptionId);
         if (prescriptionEntity == null) {
-            throw new DataNotFoundException("prescription with Prescription Code " + prescriptionId + " not found");
+            throw new DataNotFoundException(ErrorMessages.NO_RECORD_FOUND.getErrorMessage());
         }
         return prescriptionEntity;
     }
@@ -44,41 +47,55 @@ PrescriptionService {
         List<Prescription> prescription = prescriptionDao.findAll();
         for (Prescription pres : prescription) {
             if (pres == null) {
-                throw new DataNotFoundException("Empty");
+                throw new DataNotFoundException(ErrorMessages.NO_RECORD_FOUND.getErrorMessage());
             }
         }
         return prescription;
     }
 
     public Prescription createPrescription(Prescription prescription) {
-        Prescription prescriptionStored = prescriptionDao.getPrescriptionByPrescriptionId(prescription.getPrescriptionId());
-        if (prescriptionStored != null) throw new RuntimeException("prescription already exist");
+        Prescription prescriptionStored =
+                prescriptionDao.getPrescriptionByPrescriptionId(prescription.getPrescriptionId());
+        if (prescriptionStored != null) {
+            throw new IllegalException(ErrorMessages.RECORD_ALREADY_EXISTS.getErrorMessage());
+        }
 
-        Doctor doctorStored = doctorDao.findByBsnNumber(prescription.getDoctor().getBsnNumber());
+
+        Doctor doctorStored =
+                doctorDao.findByBsnNumber(prescription.getDoctor().getBsnNumber());
         if (doctorStored != null) prescription.setDoctor(doctorStored);
 
-        Patient patientStored = patientDao.getPatientByBsnNumber(prescription.getPatient().getBsnNumber());
+        Patient patientStored =
+                patientDao.getPatientByBsnNumber(prescription.getPatient().getBsnNumber());
         if (patientStored != null) prescription.setPatient(patientStored);
 
         List<Medication> medicationSet = new ArrayList<>();
         for (Medication pre : prescription.getMedications()) {
-            Medication medicationStored = medicationDao.getMedicationByName(pre.getName());
+            Medication medicationStored =
+                    medicationDao.getMedicationByName(pre.getName());
             medicationSet.add(medicationStored);
             if (medicationStored != null) {
                 prescription.setMedications(medicationSet);
             }
         }
-       return prescriptionDao.save(prescription);
+        return prescriptionDao.save(prescription);
     }
 
     public void deletePrescription(Long id) {
-        Prescription prescription = prescriptionDao.getOne(id);
-        prescriptionDao.delete(prescription);
+        Prescription prescriptionEntity =
+                prescriptionDao.getPrescriptionByPrescriptionId(id);
+        if (prescriptionEntity == null) {
+            throw new DataNotFoundException(ErrorMessages.NO_RECORD_FOUND.getErrorMessage());
+        }
+        prescriptionDao.delete(prescriptionEntity);
     }
 
-    public void updatePrescription(Prescription prescription, Long prescriptionId) {
-        Prescription prescriptionStored = prescriptionDao.getPrescriptionByPrescriptionId(prescriptionId);
-        if (prescriptionStored == null) throw new RuntimeException("prescription with " + prescriptionId + "not exist");
+    public void updatePrescription(Prescription prescription,
+                                   Long prescriptionId) {
+        Prescription prescriptionStored =
+                prescriptionDao.getPrescriptionByPrescriptionId(prescriptionId);
+        if (prescriptionStored == null)
+            throw new DataNotFoundException(ErrorMessages.NO_RECORD_FOUND.getErrorMessage());
 
         Long doctorId = null;
         if (prescriptionStored.getDoctor() != null) {
@@ -114,7 +131,8 @@ PrescriptionService {
 
         List<Long> prescriptionId = new ArrayList<>();
         Patient patientStored = patientDao.getPatientByBsnNumber(bsnNumber);
-        if (patientStored == null) throw new RuntimeException("patient with " + bsnNumber + "not exist");
+        if (patientStored == null)
+            throw new DataNotFoundException(ErrorMessages.NO_RECORD_FOUND.getErrorMessage());
         for (Prescription pre : patientStored.getPrescriptions()) {
             Long id = pre.getPrescriptionId();
             prescriptionId.add(id);

@@ -1,4 +1,4 @@
-package nl.huisartsPortal.prescription;
+package nl.huisartsportal.prescription;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

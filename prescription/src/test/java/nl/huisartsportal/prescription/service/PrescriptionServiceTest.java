@@ -1,20 +1,21 @@
-package nl.huisartsPortal.prescription.service;
+package nl.huisartsportal.prescription.service;
 
-import nl.huisartsPortal.prescription.exceptions.DataNotFoundException;
-import nl.huisartsPortal.prescription.model.Doctor;
-import nl.huisartsPortal.prescription.model.Medication;
-import nl.huisartsPortal.prescription.model.Patient;
-import nl.huisartsPortal.prescription.model.Prescription;
-import nl.huisartsPortal.prescription.repository.DoctorDao;
-import nl.huisartsPortal.prescription.repository.MedicationDao;
-import nl.huisartsPortal.prescription.repository.PatientDao;
-import nl.huisartsPortal.prescription.repository.PrescriptionDao;
+import nl.huisartsportal.prescription.exceptions.DataNotFoundException;
+import nl.huisartsportal.prescription.model.Doctor;
+import nl.huisartsportal.prescription.model.Medication;
+import nl.huisartsportal.prescription.model.Patient;
+import nl.huisartsportal.prescription.model.Prescription;
+import nl.huisartsportal.prescription.repository.DoctorDao;
+import nl.huisartsportal.prescription.repository.MedicationDao;
+import nl.huisartsportal.prescription.repository.PatientDao;
+import nl.huisartsportal.prescription.repository.PrescriptionDao;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -54,7 +55,7 @@ public class PrescriptionServiceTest {
         doctorEntity = new Doctor("nl123456", "thomas", "Verhaar", null);
         patientEntity = new Patient("NL1002", "tarik", "has", null);
         medicationsEntity = new Medication("paracetomole", null);
-        prescriptionEntity = new Prescription(new Date(2018, 2, 10), patientEntity, Arrays.asList(medicationsEntity), doctorEntity);
+        prescriptionEntity = new Prescription(LocalDate.of(2018, 2, 10), patientEntity, Arrays.asList(medicationsEntity), doctorEntity);
     }
 
     @Test

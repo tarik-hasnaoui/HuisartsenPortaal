@@ -1,4 +1,4 @@
-package nl.huisartsPortal.prescription.model;
+package nl.huisartsportal.prescription.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
